@@ -81,32 +81,30 @@ public class Library {
 
     private Publication createPublication() {
         printPublicationMenu();
-        int userChoice = validator.validateInt("Введите соответствующую цифру: ");
+        Publication publication = null;
 
-        if (userChoice < 1 || userChoice > 4) {
+        int userChoice = validator.validateInt("Введите соответствующую цифру: ");
+        if (userChoice < 1 || userChoice >= 4) {
             System.out.println("Некорректный выбор.");
-            return null;
-        }
-        if (userChoice == 4) {
-            return null;
+            return publication;
         }
 
         String title = validator.validateString("Введите название: ");
         int year = validator.validateInt("Введите год издания: ");
+        String author = validator.validateString("Введите фамилию автора: ");
 
         switch (userChoice) {
             case 1:
-                String author = validator.validateString("Введите фамилию автора: ");
                 String isbn = validator.validateString("Введите ISBN: ");
                 return new Book(title, author, year, isbn);
             case 2:
                 int issueNumber = validator.validateInt("Введите номер выпуска журнала: ");
-                return new Magazine(title, year, issueNumber);
+                return new Magazine(title, author, year, issueNumber);
             case 3:
                 String pubDay = validator.validateString("Введите дату публикации газеты: ");
-                return new Newspaper(title, year, pubDay);
+                return new Newspaper(title, author, year, pubDay);
             default:
-                return null;
+                return publication;
         }
     }
 
@@ -115,6 +113,5 @@ public class Library {
         System.out.println("1. Книга");
         System.out.println("2. Журнал");
         System.out.println("3. Газета");
-        System.out.println("4. Отменить");
     }
 }

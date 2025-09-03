@@ -7,12 +7,6 @@ public abstract class Publication implements Printable {
     private String author;
     private int year;
 
-
-    public Publication(String title, int year) {
-        this.title = title;
-        this.year = year;
-    }
-
     public Publication(String title, String author, int year) {
         this.title = title;
         this.author = author;
@@ -24,7 +18,7 @@ public abstract class Publication implements Printable {
     @Override
     public String toString() {
         return ", название - '" + title + '\'' +
-                ", год публикации: " + year;
+                ", автор - " + author + " год публикации- " + year;
     }
 
     @Override

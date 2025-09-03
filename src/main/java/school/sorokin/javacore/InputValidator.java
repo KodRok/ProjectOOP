@@ -18,7 +18,7 @@ public class InputValidator {
                 scanner.nextLine();
                 return value;
             } catch (InputMismatchException e) {
-                System.out.println("Нужно ввсети целое число!");
+                System.out.println("Нужно ввести целое число!");
                 scanner.next();
                 System.out.print(prompt);
             }

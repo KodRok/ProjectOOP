@@ -25,7 +25,7 @@ public class Book extends Publication {
 
     @Override
     public String toString() {
-        return getType() + ", Автор - " + getAuthor() + super.toString() +
+        return getType() + ", автор - " + getAuthor() + super.toString() +
                 ", ISBN='" + ISBN + "'";
     }
 
@@ -44,7 +44,7 @@ public class Book extends Publication {
 
     @Override
     public void printDetails() {
-        System.out.printf("\n%s: Автор - %s, Название - %s, Год выпуска - %d, ISBN - %s",
+        System.out.printf("\n%s: автор - %s, название - \"%s\", год выпуска - %d, ISBN - %s",
                 getType(), getAuthor(), getTitle(), getYear(), getISBN());
     }
 }

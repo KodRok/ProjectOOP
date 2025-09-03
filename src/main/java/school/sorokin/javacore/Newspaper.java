@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Newspaper extends Publication {
     private String publicationDay;
 
-    public Newspaper(String title, int year, String publicationDay) {
-        super(title, year);
+    public Newspaper(String title, String author, int year, String publicationDay) {
+        super(title, author, year);
         this.publicationDay = publicationDay;
     }
 
@@ -39,12 +39,12 @@ public class Newspaper extends Publication {
     @Override
     public String toString() {
         return getType() + super.toString() +
-                ", Дата выхода - " + publicationDay;
+                ", дата выхода - " + publicationDay;
     }
 
     @Override
     public void printDetails() {
-        System.out.printf("\n%s: название - \"%s\", год выпуска - %d, день выпуска - %s",
-                getType(), getTitle(), getYear(), getPublicationDay());
+        System.out.printf("\n%s: автор - %s, название - \"%s\", год выпуска - %d, день выпуска - %s",
+                getType(), getAuthor(), getTitle(), getYear(), getPublicationDay());
     }
 }

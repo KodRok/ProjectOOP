@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Magazine extends Publication {
     private int issueNumber;
 
-    public Magazine(String title, int year, int issueNumber) {
-        super(title, year);
+    public Magazine(String title, String author, int year, int issueNumber) {
+        super(title, author, year);
         this.issueNumber = issueNumber;
     }
 
@@ -44,7 +44,7 @@ public class Magazine extends Publication {
 
     @Override
     public void printDetails() {
-        System.out.printf("\n%s: название - \"%s\", год выпуска - %d, ISBN - %s",
-                getType(), getTitle(), getYear(), getIssueNumber());
+        System.out.printf("\n%s: автор - %s, название - \"%s\", год выпуска - %d, ISBN - %s",
+                getType(), getAuthor(), getTitle(), getYear(), getIssueNumber());
     }
 }
