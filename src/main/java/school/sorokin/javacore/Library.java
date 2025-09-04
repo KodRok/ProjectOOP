@@ -84,7 +84,7 @@ public class Library {
         Publication publication = null;
 
         int userChoice = validator.validateInt("Введите соответствующую цифру: ");
-        if (userChoice < 1 || userChoice >= 4) {
+        if (userChoice < 1 || userChoice > 3) {
             System.out.println("Некорректный выбор.");
             return publication;
         }
